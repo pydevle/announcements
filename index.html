@@ -81,7 +81,6 @@
         .contact-section {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid #ecf0f1;
             text-align: center;
         }
         
@@ -92,16 +91,21 @@
         .contact-link {
             color: #3498db;
             text-decoration: none;
-            margin: 0 10px;
             padding: 8px 15px;
             border: 1px solid #3498db;
             border-radius: 4px;
             transition: all 0.2s;
+            display: inline-block;
+            margin: 5px 0;
         }
         
         .contact-link:hover {
             background-color: #3498db;
             color: white;
+        }
+        
+        .contact-item {
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -111,20 +115,45 @@
     <table>
         <tr>
             <td>
+                <span class="date-highlight">Saturday, November 22nd</span>
+                <br>7pm Speaker: Mike                
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Central Presbyterian
+                </a>
+                <br>301 Euclid Avenue
+                <br>Bristol, VA 24201
+            </td>		
+        </tr>
+        <tr>
+            <td>Speaker: Mike
+            </td>		
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
                 <span class="date-highlight">Wednesday, November 26th</span>
                 <br>6pm Dinner
                 <br>730pm - 9pm Meeting
             </td>
         </tr>
         <tr>
-            <td class="location">Girls Gone Sober
-            	<br><a href="https://www.google.com/maps/search/?api=1&query=The+Prospect+Center+1425+East+Center+St+Kingsport+TN+37660" 
-                      target="_blank" 
-                      class="address-link">
-                      <span class="map-icon">📍</span>The Prospect Center
-                    </a>
-            	<br>1425 East Center St.
-            	<br>Kingsport, TN 37660
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=The+Prospect+Center+1425+East+Center+St+Kingsport+TN+37660" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Girls Gone Sober
+                </a>
+                <br>The Prospect Center
+                <br>1425 East Center St.
+                <br>Kingsport, TN 37660
             </td>		
         </tr>
         <tr>
@@ -145,14 +174,14 @@
             </td>
         </tr>
         <tr>
-            <td class="location">Lunch Bunch @ Highlands Fellowship Bristol
-            	<br><a href="https://www.google.com/maps/search/?api=1&query=Highlands+Fellowship+134+Commerce+Court+Bristol+VA+24202" 
-                      target="_blank" 
-                      class="address-link">
-                      <span class="map-icon">📍</span>Highlands Fellowship
-                    </a>
-            	<br>134 Commerce Court
-            	<br>Bristol, VA 24202
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Highlands+Fellowship+134+Commerce+Court+Bristol+VA+24202" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Lunch Bunch @ Highlands Fellowship Bristol
+                </a>
+                <br>134 Commerce Court
+                <br>Bristol, VA 24202
             </td>		
         </tr>
         <tr>
@@ -162,13 +191,88 @@
             </td>		
         </tr>
     </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Saturday, November 29th</span>
+                <br>11am Speaker: Steven               
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Highlands+Fellowship+134+Commerce+Court+Bristol+VA+24202" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Lunch Bunch @ Highlands Fellowship Bristol
+                </a>
+                <br>134 Commerce Court
+                <br>Bristol, VA 24202
+            </td>		
+        </tr>
+        <tr>
+            <td>Speaker: Steven
+            </td>		
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Wednesday, December 24th</span>
+                <br>7pm Speaker: Rusty             
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Central Presbyterian
+                </a>
+                <br>301 Euclid Avenue
+                <br>Bristol, VA 24201
+            </td>		
+        </tr>
+        <tr>
+            <td>Speaker: Rusty
+            </td>		
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Wednesday, December 31st</span>
+                <br>7pm Speaker: Rachel             
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Central Presbyterian
+                </a>
+                <br>301 Euclid Avenue
+                <br>Bristol, VA 24201
+            </td>		
+        </tr>
+        <tr>
+            <td>Speaker: Rachel
+            </td>		
+        </tr>
+    </table>
     
     <div class="contact-section">
-        <hr>
         <h3>Contact:</h3>
         <div class="contact-info">
-            <a href="mailto:jedcof@gmail.com" class="contact-link">jedcof@gmail.com</a>
-            <a href="sms:410-491-1662" class="contact-link">410-491-1662</a>
+            <div class="contact-item">
+                <a href="sms:410-491-1662" class="contact-link">410-491-1662</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:jedcof@gmail.com" class="contact-link">jedcof@gmail.com</a>
+            </div>
         </div>
     </div>
 </body>
