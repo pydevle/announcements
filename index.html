@@ -84,6 +84,7 @@
             margin-top: 40px;
             padding-top: 20px;
             text-align: center;
+            border-top: 1px solid #ecf0f1;
         }
         
         .contact-info {
@@ -108,6 +109,11 @@
         
         .contact-item {
             margin: 10px 0;
+        }
+        
+        /* QR Code Section - Hidden on screen */
+        .qr-section {
+            display: none;
         }
         
         /* Print-specific styles */
@@ -149,11 +155,43 @@
                 border: none;
                 padding: 0;
             }
+            
+            /* Show QR code only when printing */
+            .qr-section {
+                display: block;
+                text-align: center;
+                margin: 0 auto 20px auto;
+                page-break-after: avoid;
+            }
+            
+            .qr-code {
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .qr-code img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .qr-instructions {
+                font-size: 0.9em;
+                color: #666;
+                margin-top: 5px;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Announcements</h1>
+    
+    <!-- QR Code Section - Only visible when printing -->
+    <div class="qr-section">
+        <div class="qr-code">
+            <img src="qr.png" alt="Scan for digital version">
+        </div>
+        <p class="qr-instructions">Scan to view online version</p>
+    </div>
     
     <table>
         <tr>
