@@ -111,9 +111,46 @@
             margin: 10px 0;
         }
         
-        /* QR Code Section - Hidden on screen */
+        /* QR Code Section */
         .qr-section {
-            display: none;
+            margin: 30px 0;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .qr-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .qr-code {
+            margin: 15px auto;
+            padding: 10px;
+            background-color: white;
+            display: inline-block;
+            border: 1px solid #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        .qr-code img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .qr-url {
+            margin: 10px 0;
+            font-size: 1em;
+            color: #3498db;
+            word-break: break-all;
+        }
+        
+        .qr-instructions {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #7f8c8d;
         }
         
         /* Print-specific styles */
@@ -156,42 +193,31 @@
                 padding: 0;
             }
             
-            /* Show QR code only when printing */
+            /* Show QR code when printing with print-optimized styling */
             .qr-section {
                 display: block;
-                text-align: center;
-                margin: 0 auto 20px auto;
-                page-break-after: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin: 20px 0;
+                page-break-inside: avoid;
             }
             
-            .qr-code {
-                margin: 0 auto;
-                text-align: center;
+            .qr-section h3 {
+                color: #000;
             }
             
-            .qr-code img {
-                width: 120px;
-                height: 120px;
+            .qr-url {
+                color: #000;
             }
             
             .qr-instructions {
-                font-size: 0.9em;
                 color: #666;
-                margin-top: 5px;
             }
         }
     </style>
 </head>
 <body>
     <h1>Announcements</h1>
-    
-    <!-- QR Code Section - Only visible when printing -->
-    <div class="qr-section">
-        <div class="qr-code">
-            <img src="qr.png" alt="Scan for digital version">
-        </div>
-        <p class="qr-instructions">Scan to view online version</p>
-    </div>
     
     <table>
         <tr>
@@ -345,8 +371,18 @@
         </tr>
     </table>
     
+    <!-- QR Code Section -->
+    <div class="qr-section">
+        <h3>SCAN to share</h3>
+        <div class="qr-code">
+            <img src="qr.png" alt="Scan to share announcements">
+        </div>
+        <div class="qr-url">https://pydevle.github.io/announcements/</div>
+        <p class="qr-instructions">press and hold to copy link</p>
+    </div>
+    
     <div class="contact-section">
-        <h3>Contact: James C</h3>
+        <h3>Contact:</h3>
         <div class="contact-info">
             <div class="contact-item">
                 <a href="sms:410-491-1662" class="contact-link">410-491-1662</a>
