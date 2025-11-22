@@ -153,6 +153,57 @@
             color: #7f8c8d;
         }
         
+        /* Meeting Guide App Section */
+        .meeting-guide-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        /* Everything AA App Section */
+        .everything-aa-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        .app-section-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .app-logo {
+            height: 40px;
+            width: auto;
+        }
+        
+        .app-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .app-link {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .app-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .divider {
+            color: #7f8c8d;
+        }
+        
         /* Print-specific styles */
         @media print {
             body {
@@ -212,6 +263,16 @@
             
             .qr-instructions {
                 color: #666;
+            }
+            
+            .meeting-guide-section,
+            .everything-aa-section {
+                page-break-before: avoid;
+            }
+            
+            .app-link {
+                color: #000;
+                text-decoration: none;
             }
         }
     </style>
@@ -381,8 +442,35 @@
         <p class="qr-instructions">press and hold to copy link</p>
     </div>
     
+    <!-- Meeting Guide App Section -->
+    <div class="meeting-guide-section">
+        <h3>Meeting Guide App</h3>
+        <div class="app-section-content">
+            <img src="mg.png" alt="Meeting Guide App" class="app-logo">
+            <div class="app-links">
+                <a href="https://play.google.com/store/search?q=meeting%20guide&c=apps" target="_blank" class="app-link">Android</a>
+                <span class="divider">|</span>
+                <a href="https://apps.apple.com/us/app/meeting-guide/id1042822181" target="_blank" class="app-link">Apple</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Everything AA App Section -->
+    <div class="everything-aa-section">
+        <h3>Everything AA App</h3>
+        <div class="app-section-content">
+            <img src="eaa.png" alt="Everything AA App" class="app-logo">
+            <div class="app-links">
+                <a href="https://play.google.com/store/search?q=everything+aa&c=apps" target="_blank" class="app-link">Android</a>
+                <span class="divider">|</span>
+                <a href="https://apps.apple.com/us/app/everything-aa/id1565768051" target="_blank" class="app-link">Apple</a>
+            </div>
+        </div>
+    </div>
+    
     <div class="contact-section">
         <h3>Contact: James C</h3>
+        <p>To add/edit/delete send info or flyer. To receive updates send "add -yourname- to announcement list".</p>
         <div class="contact-info">
             <div class="contact-item">
                 <a href="sms:410-491-1662" class="contact-link">410-491-1662</a>
@@ -394,4 +482,3 @@
     </div>
 </body>
 </html>
-
