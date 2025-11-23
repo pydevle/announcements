@@ -513,39 +513,8 @@
 
     <p align="center">Updated: 11/22/25</p>
     
-    <!-- Bookmark link -->
-    <div class="bookmark-link">
-        <a href="#" id="bookmark-link">Add to Bookmarks</a>
-    </div>
-
-    <script>
-        // Bookmark functionality
-        document.getElementById('bookmark-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get the current page title and URL
-            const title = document.title;
-            const url = window.location.href;
-            
-            // Check if the browser supports the bookmarks API
-            if (window.sidebar && window.sidebar.addPanel) {
-                // Firefox
-                window.sidebar.addPanel(title, url, '');
-            } else if (window.external && ('AddFavorite' in window.external)) {
-                // Internet Explorer
-                window.external.AddFavorite(url, title);
-            } else if (window.opera && window.print) {
-                // Opera
-                this.setAttribute('href', url);
-                this.setAttribute('title', title);
-                this.setAttribute('rel', 'sidebar');
-                return true;
-            } else {
-                // Other browsers (Chrome, Safari, Edge)
-                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd+D' : 'Ctrl+D') + ' to bookmark this page.');
-            }
-        });
-    </script>
+    
 
 </body>
 </html>
+
