@@ -221,6 +221,25 @@
             color: #7f8c8d;
         }
         
+        /* Bookmark link styles */
+        .bookmark-link {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .bookmark-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.2s;
+        }
+        
+        .bookmark-link a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
         /* Print-specific styles */
         @media print {
             body {
@@ -270,6 +289,11 @@
             
             /* Hide "press and hold to copy link" instructions when printing */
             .qr-instructions {
+                display: none;
+            }
+            
+            /* Hide bookmark link when printing */
+            .bookmark-link {
                 display: none;
             }
             
@@ -359,8 +383,8 @@
             </td>       
         </tr>
         <tr>
-            <td>Thanksgiving Dinner
-                <br>Main course provided
+            <td>Thanksgiving Dinner.
+                <br>Main course provided.
                 <br>Feel free to bring side or dessert
             </td>       
         </tr>
@@ -488,7 +512,40 @@
     </div>
 
     <p align="center">Updated: 11/22/25</p>
+    
+    <!-- Bookmark link -->
+    <div class="bookmark-link">
+        <a href="#" id="bookmark-link">Add to Bookmarks</a>
+    </div>
+
+    <script>
+        // Bookmark functionality
+        document.getElementById('bookmark-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the current page title and URL
+            const title = document.title;
+            const url = window.location.href;
+            
+            // Check if the browser supports the bookmarks API
+            if (window.sidebar && window.sidebar.addPanel) {
+                // Firefox
+                window.sidebar.addPanel(title, url, '');
+            } else if (window.external && ('AddFavorite' in window.external)) {
+                // Internet Explorer
+                window.external.AddFavorite(url, title);
+            } else if (window.opera && window.print) {
+                // Opera
+                this.setAttribute('href', url);
+                this.setAttribute('title', title);
+                this.setAttribute('rel', 'sidebar');
+                return true;
+            } else {
+                // Other browsers (Chrome, Safari, Edge)
+                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd+D' : 'Ctrl+D') + ' to bookmark this page.');
+            }
+        });
+    </script>
+
 </body>
 </html>
-
-
