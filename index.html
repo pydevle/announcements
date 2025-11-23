@@ -27,6 +27,23 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 2px solid #ecf0f1;
+            position: relative;
+        }
+        
+        .print-link {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #3498db;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .print-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
         }
         
         table {
@@ -210,11 +227,17 @@
                 padding: 0;
                 max-width: 100%;
                 background-color: white;
-                margin-left: 1.5in; /* Increased left margin for hole punching */
+                margin-left: 0.75in; /* Equal left margin */
+                margin-right: 0.75in; /* Equal right margin */
             }
             
             h1 {
                 margin-bottom: 20px;
+            }
+            
+            /* Hide print link when printing */
+            .print-link {
+                display: none;
             }
             
             table {
@@ -233,24 +256,29 @@
                 display: none;
             }
             
-            .contact-section {
-                margin-top: 30px;
-                page-break-before: avoid;
-            }
-            
             .contact-link {
                 color: #000;
                 border: none;
                 padding: 0;
             }
             
-            /* Show QR code when printing with print-optimized styling */
+            /* Hide Meeting Guide and Everything AA App sections when printing */
+            .meeting-guide-section,
+            .everything-aa-section {
+                display: none;
+            }
+            
+            /* Hide "press and hold to copy link" instructions when printing */
+            .qr-instructions {
+                display: none;
+            }
+            
+            /* Force page break before scan to share section */
             .qr-section {
-                display: block;
+                page-break-before: always;
                 box-shadow: none;
                 border: 1px solid #ddd;
-                margin: 20px 0;
-                page-break-inside: avoid;
+                margin: 40px 0 20px 0;
             }
             
             .qr-section h3 {
@@ -261,48 +289,26 @@
                 color: #000;
             }
             
-            .qr-instructions {
-                color: #666;
+            /* Ensure QR and contact sections stay together */
+            .qr-section,
+            .contact-section {
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
             
-            .meeting-guide-section,
-            .everything-aa-section {
-                page-break-before: avoid;
-            }
-            
-            .app-link {
-                color: #000;
-                text-decoration: none;
+            .contact-section {
+                margin-top: 30px;
+                border-top: 1px solid #ddd;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Announcements</h1>
+    <h1>Announcements
+        <a class="print-link" onclick="window.print()">Print</a>
+    </h1>
     
-    <table>
-        <tr>
-            <td>
-                <span class="date-highlight">Saturday, November 22nd</span>
-                <br>7pm Speaker: Mike                
-            </td>
-        </tr>
-        <tr>
-            <td class="location">
-                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
-                   target="_blank" 
-                   class="address-link">
-                   <span class="map-icon">📍</span>Central Presbyterian
-                </a>
-                <br>301 Euclid Avenue
-                <br>Bristol, VA 24201
-            </td>       
-        </tr>
-        <tr>
-            <td>Speaker: Mike
-            </td>       
-        </tr>
-    </table>
+    
 
     <table>
         <tr>
@@ -482,4 +488,3 @@
     </div>
 </body>
 </html>
-
