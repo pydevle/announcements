@@ -18,7 +18,527 @@
             padding: 20px;
             max-width: 800px;
             margin: 0 auto;
+            background-color: #f8f9fa;<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
             background-color: #f8f9fa;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+            position: relative;
+        }
+        
+        .print-link {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #3498db;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .print-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            background-color: white;
+        }
+        
+        td {
+            border: 1px solid #bdc3c7;
+            padding: 15px;
+            vertical-align: top;
+        }
+        
+        /* Alternating row colors */
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+        
+        .date-highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .location {
+            font-style: italic;
+        }
+        
+        .address-link {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .address-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .map-icon {
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 0.9em;
+        }
+        
+        .contact-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+        }
+        
+        .contact-link {
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            transition: all 0.2s;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .contact-link:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .contact-item {
+            margin: 10px 0;
+        }
+        
+        /* QR Code Section */
+        .qr-section {
+            margin: 30px 0;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .qr-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .qr-code {
+            margin: 15px auto;
+            padding: 10px;
+            background-color: white;
+            display: inline-block;
+            border: 1px solid #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        .qr-code img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .qr-url {
+            margin: 10px 0;
+            font-size: 1em;
+            color: #3498db;
+            word-break: break-all;
+        }
+        
+        .qr-instructions {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        /* Meeting Guide App Section */
+        .meeting-guide-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        /* Everything AA App Section */
+        .everything-aa-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        .app-section-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .app-logo {
+            height: 40px;
+            width: auto;
+        }
+        
+        .app-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .app-link {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .app-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .divider {
+            color: #7f8c8d;
+        }
+        
+        /* Bookmark link styles */
+        .bookmark-link {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .bookmark-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.2s;
+        }
+        
+        .bookmark-link a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+                background-color: white;
+                margin-left: 0.75in; /* Equal left margin */
+                margin-right: 0.75in; /* Equal right margin */
+            }
+            
+            h1 {
+                margin-bottom: 20px;
+            }
+            
+            /* Hide print link when printing */
+            .print-link {
+                display: none;
+            }
+            
+            table {
+                box-shadow: none;
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .address-link {
+                color: #000;
+                text-decoration: none;
+            }
+            
+            .map-icon {
+                display: none;
+            }
+            
+            .contact-link {
+                color: #000;
+                border: none;
+                padding: 0;
+            }
+            
+            /* Hide Meeting Guide and Everything AA App sections when printing */
+            .meeting-guide-section,
+            .everything-aa-section {
+                display: none;
+            }
+            
+            /* Hide "press and hold to copy link" instructions when printing */
+            .qr-instructions {
+                display: none;
+            }
+            
+            /* Hide bookmark link when printing */
+            .bookmark-link {
+                display: none;
+            }
+            
+            /* Force page break before scan to share section */
+            .qr-section {
+                page-break-before: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin: 40px 0 20px 0;
+            }
+            
+            .qr-section h3 {
+                color: #000;
+            }
+            
+            .qr-url {
+                color: #000;
+            }
+            
+            /* Ensure QR and contact sections stay together */
+            .qr-section,
+            .contact-section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .contact-section {
+                margin-top: 30px;
+                border-top: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Announcements
+        <a class="print-link" onclick="window.print()">Print</a>
+    </h1>
+
+    <!-- start -->   
+
+    
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Wednesday, December 24th</span>
+                <br>7pm Speaker: Rusty             
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Central Presbyterian
+                </a>
+                <br>301 Euclid Avenue
+                <br>Bristol, VA 24201
+            </td>       
+        </tr>
+        <tr>
+            <td>Speaker: Rusty A
+            </td>       
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Wednesday, December 31st</span>
+                <br>7pm Speaker: Rachel             
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Central Presbyterian
+                </a>
+                <br>301 Euclid Avenue
+                <br>Bristol, VA 24201
+            </td>       
+        </tr>
+        <tr>
+            <td>Speaker: Rachel A
+            </td>       
+        </tr>
+    </table>
+    
+    <!-- QR Code Section -->
+    <div class="qr-section">
+        <h3>SCAN to share</h3>
+        <div class="qr-code">
+            <img src="qr.png" alt="Scan to share announcements">
+        </div>
+        <div class="qr-url">https://pydevle.github.io/announcements/</div>
+        <p class="qr-instructions">press and hold to copy link</p>
+    </div>
+    
+    <!-- Meeting Guide App Section -->
+    <div class="meeting-guide-section">
+        <h3>Meeting Guide App</h3>
+        <div class="app-section-content">
+            <img src="mg.png" alt="Meeting Guide App" class="app-logo">
+            <div class="app-links">
+                <a href="https://play.google.com/store/search?q=meeting%20guide&c=apps" target="_blank" class="app-link">Android</a>
+                <span class="divider">|</span>
+                <a href="https://apps.apple.com/us/app/meeting-guide/id1042822181" target="_blank" class="app-link">Apple</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Everything AA App Section -->
+    <div class="everything-aa-section">
+        <h3>Everything AA App</h3>
+        <div class="app-section-content">
+            <img src="eaa.png" alt="Everything AA App" class="app-logo">
+            <div class="app-links">
+                <a href="https://play.google.com/store/search?q=everything+aa&c=apps" target="_blank" class="app-link">Android</a>
+                <span class="divider">|</span>
+                <a href="https://apps.apple.com/us/app/everything-aa/id1565768051" target="_blank" class="app-link">Apple</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact-section">
+        <h3>Contact: James C</h3>
+        <p>To add/edit/delete send info or flyer. To receive updates send "add -first name last initial- to announcement list".</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="sms:410-491-1662" class="contact-link">410-491-1662</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:jedcof@gmail.com" class="contact-link">jedcof@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <p align="center">Updated: 11/29/25</p>
+    
+    
+
+</body>
+</html>
+<!-- saved code
+
+Damascus
+
+<table>
+        <tr>
+            <td>
+                <span class="date-highlight">date</span>
+                <br>630pm Speaker:               
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Methodist+Church+202+E.+Laurel+Avenue+Damascus+VA+24236" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Methodist Church
+                </a>
+                <br>202 E. Laurel Avenue
+                <br>Damascus, VA 24236
+            </td>       
+        </tr>
+        <tr>
+            <td>Speaker: 
+            </td>       
+        </tr>
+    </table>
+
+Lunch Bunch
+
+<table>
+        <tr>
+            <td>
+                <span class="date-highlight">date</span>
+                <br>11am Speaker:               
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Highlands+Fellowship+134+Commerce+Court+Bristol+VA+24202" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Lunch Bunch @ Highlands Fellowship Bristol
+                </a>
+                <br>134 Commerce Court
+                <br>Bristol, VA 24202
+            </td>       
+        </tr>
+        <tr>
+            <td>Speaker: 
+            </td>       
+        </tr>
+    </table>
+
+Euclid
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">date</span>
+                <br>7pm Speaker:               
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Central Presbyterian
+                </a>
+                <br>301 Euclid Avenue
+                <br>Bristol, VA 24201
+            </td>       
+        </tr>
+        <tr>
+            <td>Speaker: 
+            </td>       
+        </tr>
+    </table>
+
+-->
         }
         
         h1 {
@@ -519,3 +1039,4 @@ Euclid
     </table>
 
 -->
+
