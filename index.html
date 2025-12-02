@@ -33,17 +33,24 @@
         .print-link {
             position: absolute;
             right: 0;
-            top: 0;
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 1rem;
             font-weight: normal;
-            color: #3498db;
+            color: white;
+            background-color: #3498db;
             text-decoration: none;
             cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            border: 1px solid #2980b9;
         }
         
         .print-link:hover {
-            color: #2980b9;
-            text-decoration: underline;
+            background-color: #2980b9;
+            text-decoration: none;
+            transform: translateY(-50%) scale(1.05);
         }
         
         table {
@@ -333,13 +340,13 @@
     </h1>
 
     <!-- start -->   
-
     
     <table>
         <tr>
             <td>
                 <span class="date-highlight">Wednesday, December 24th</span>
-                <br>7pm Speaker: Rusty             
+                <br>7pm Speaker: Rusty
+                <br>8pm to 10pm: Food, fellowship, and games             
             </td>
         </tr>
         <tr>
@@ -355,15 +362,19 @@
         </tr>
         <tr>
             <td>Speaker: Rusty
+                <br>Bring a snack to share if you'd like
             </td>       
         </tr>
     </table>
+
+    
 
     <table>
         <tr>
             <td>
                 <span class="date-highlight">Wednesday, December 31st</span>
-                <br>7pm Speaker: Rachel             
+                <br>7pm Speaker: Rachel A
+                <br>8pm - midnight: Food, fellowship, and games            
             </td>
         </tr>
         <tr>
@@ -379,15 +390,127 @@
         </tr>
         <tr>
             <td>Speaker: Rachel A
+                <br>Bring a snack to share and a favorite game OR just bring your game...
             </td>       
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Saturday January 24th 2026</span>
+                <br>11am - 130pm
+                <br>Traditions Workshop       
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Renaissance+Center+1200+E+Center+St+Kingsport+TN+37660" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Renaissance Center
+                </a>
+                <br>Room 314
+                <br>1200 E Center St
+                <br>Kingsport, TN 37660
+            </td>       
+        </tr>
+        <tr>
+            <td>Lunch Provided
+                <br>No Cost</td>
+            </td>      
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Fri-Sun Jan 30 - Feb 01 2026</span>
+                <br>Smoky Mountain Conference
+                <br>"As The Result of These Steps"
+                <br>Speakers covering 12 steps    
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=The+Ramsey+Hotel+and+Convention+Center+3230+Parkway+Pigeon+Forge+TN+37863" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>The Ramsey Hotel and Convention Center
+                </a>
+                <br>3230 Parkway                
+                <br>Pigeon Forge, TN 37863
+            </td>       
+        </tr>
+        <tr>
+            <td>
+                View/Print <a href="smokyConference.pdf">Flyer</a> or <a href="smoky-lessink.html">Flyer with less ink</a>
+                <br><a href="https://smokyconference.com/">https://smokyconference.com/</a>
+                <br>No Cost but $35 suggested donation</td>
+            </td>      
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Fri-Sun, February 20-22 2026</span>
+                <br>Stepping Into Serenity
+                <br>Women's Conference
+                <br>Speakers covering 12 steps       
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Embassy+Suites+Hamilton+Place+Chattanooga+2321+Lifestyle+Way+Chattanooga+TN+37421" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Embassy Suites, Hamilton Place Chattanooga
+                </a>
+                <br>2321 Lifestyle Way
+                <br>Chattanooga, TN 37421
+            </td>       
+        </tr>
+        <tr>
+            <td>
+                View/Print <a href="sisflyer.pdf">Flyer</a>
+                <br><a href="https://steppingintoserenity.org/" target="_blank">https://steppingintoserenity.org/</a>
+                <br>Registration: $40 before 12/31/25 $45 after
+            </td>       
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <span class="date-highlight">Fri-Sun, May 22-24 2026</span>
+                <br>Appalachian Regional Roundup        
+            </td>
+        </tr>
+        <tr>
+            <td class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=Meadowview+Convention+Center+1901+Meadowview+Parkway+Kingsport+TN+37660" 
+                   target="_blank" 
+                   class="address-link">
+                   <span class="map-icon">📍</span>Meadowview Convention Center
+                </a>
+                <br>1901 Meadowview Parkway
+                <br>Kingsport, TN 37660
+            </td>       
+        </tr>
+        <tr>
+            <td><a href="https://www.appalachianregionalroundup.com" target="_blank">www.appalachianregionalroundup.com</a>
+                <br>Registration: $30 before 5/13/26 $35 after
+            </td>      
         </tr>
     </table>
     
     <!-- QR Code Section -->
     <div class="qr-section">
-        <h3>SCAN to share</h3>
+        <h3>SCAN to share announcements</h3>
         <div class="qr-code">
             <img src="qr.png" alt="Scan to share announcements">
+            <p>act like you are going to take a picture of it</p>
         </div>
         <div class="qr-url">https://pydevle.github.io/announcements/</div>
         <p class="qr-instructions">press and hold to copy link</p>
@@ -438,84 +561,3 @@
 
 </body>
 </html>
-<!-- saved code
-
-Damascus
-
-<table>
-        <tr>
-            <td>
-                <span class="date-highlight">date</span>
-                <br>630pm Speaker:               
-            </td>
-        </tr>
-        <tr>
-            <td class="location">
-                <a href="https://www.google.com/maps/search/?api=1&query=Methodist+Church+202+E.+Laurel+Avenue+Damascus+VA+24236" 
-                   target="_blank" 
-                   class="address-link">
-                   <span class="map-icon">📍</span>Methodist Church
-                </a>
-                <br>202 E. Laurel Avenue
-                <br>Damascus, VA 24236
-            </td>       
-        </tr>
-        <tr>
-            <td>Speaker: 
-            </td>       
-        </tr>
-    </table>
-
-Lunch Bunch
-
-<table>
-        <tr>
-            <td>
-                <span class="date-highlight">date</span>
-                <br>11am Speaker:               
-            </td>
-        </tr>
-        <tr>
-            <td class="location">
-                <a href="https://www.google.com/maps/search/?api=1&query=Highlands+Fellowship+134+Commerce+Court+Bristol+VA+24202" 
-                   target="_blank" 
-                   class="address-link">
-                   <span class="map-icon">📍</span>Lunch Bunch @ Highlands Fellowship Bristol
-                </a>
-                <br>134 Commerce Court
-                <br>Bristol, VA 24202
-            </td>       
-        </tr>
-        <tr>
-            <td>Speaker: 
-            </td>       
-        </tr>
-    </table>
-
-Euclid
-
-    <table>
-        <tr>
-            <td>
-                <span class="date-highlight">date</span>
-                <br>7pm Speaker:               
-            </td>
-        </tr>
-        <tr>
-            <td class="location">
-                <a href="https://www.google.com/maps/search/?api=1&query=Central+Presbyterian+301+Euclid+Avenue+Bristol+VA+24201" 
-                   target="_blank" 
-                   class="address-link">
-                   <span class="map-icon">📍</span>Central Presbyterian
-                </a>
-                <br>301 Euclid Avenue
-                <br>Bristol, VA 24201
-            </td>       
-        </tr>
-        <tr>
-            <td>Speaker: 
-            </td>       
-        </tr>
-    </table>
-
--->
